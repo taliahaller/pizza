@@ -8,10 +8,20 @@ $(document).ready(function() {
   var numbers = ["0",...Array(1000).keys()];
   var beepBoop = [];
 
+
+
+
 loop3:
   for(var i = 1; i < userNumber + 2; i++){
     var examineNumber = numbers[i];
-    beepBoop.push(examineNumber);
+
+      if (/0+/.test(examineNumber)) {
+        beepBoop.push("Beep");
+      } else {
+        beepBoop.push(examineNumber);
+      }
+
+
   } //for loop 3
 
   console.log(examineNumber);
