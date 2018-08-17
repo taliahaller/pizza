@@ -16,7 +16,7 @@ loop3:
     var examineNumber = numbers[i];
 
     if (examineNumber % 3 == 0) {
-          beepBoop.push("Dave");
+          beepBoop.push("I'm sorry, Dave. I'm afraid I can't do that.");
       } else if (/1+/.test(examineNumber)) {
           beepBoop.push("Boop");
       } else if (/0+/.test(examineNumber)) {

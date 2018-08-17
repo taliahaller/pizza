@@ -15,8 +15,15 @@ These exceptions are written from least to most important. The first exception s
 
 Also a user can enter a new number and see new results over and over again.
 
-**Specs: Program Gathers User Input**
-1.
+## Specs for project:
+
+    Format: Behavior | "Input" | "Output"
+    1. Create form to take user input and put same number back out. | "5" | "5"
+    2. Program returns all numbers below inputted number. | "3" | "3, 2, 1, 0"
+    3. Programs returns number range in increasing order. | "3" | "0, 1, 2, 3"
+    4. Program replaces all numbers containing "0" with "Beep". | "3" | "Beep, 1, 2, 3"
+    5. Program replaces all numbers containing "1" with "Beep" (overrides spec 4). | "3" | "Beep, Boop, 2, 3"
+    6. Program replaces all numbers divisible by 3 with Dave sentence (overrides spec 4, 5). | "3" | "Beep, Boop, 2, [Dave Sentence]"
 
 
 ## Setup/Installation Requirements
