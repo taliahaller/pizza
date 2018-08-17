@@ -5,7 +5,7 @@
 
 ## Description
 
-Creates a web application that takes a number from a user and returns a range of numbers from 0 to the chosen number with the following exceptions:
+Creates a web application that takes a number from a user (range = 0 to 1000) and returns a range of numbers from 0 to the chosen number with the following exceptions:
 
 Numbers that contain a 0 are replaced (all digits) with "Beep!"
 Numbers that contain a 1 are replaced (all digits) with "Boop!"
@@ -16,7 +16,7 @@ These exceptions are written from least to most important. The first exception s
 Also a user can enter a new number and see new results over and over again.
 
 **Specs: Program Gathers User Input**
-1. 
+1.
 
 
 ## Setup/Installation Requirements
