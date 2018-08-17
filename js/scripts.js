@@ -3,6 +3,7 @@ $(document).ready(function() {
     $(".well").show();
   event.preventDefault();
 
+  // var userName = $("input#inputName").val();
   var userNumber = parseInt($("input#inputNumber").val());
   var numbers = ["0",...Array(1000).keys()];
   var beepBoop = [];
@@ -21,6 +22,7 @@ $(document).ready(function() {
     }
 
     beepBoop = beepBoop.join(", ");
+    $("#nameForMessage").text($("input#inputName").val());
     $("#answer").text(beepBoop + ".");
   }); // (#formOne).submit close
 }); // (document).ready close

@@ -10,12 +10,14 @@
 .centerQuestion {
   text-align: center;
   margin: 55px auto;
-  width: 210px;
-  padding: 20px;
+  width: 400px;
+  padding: 10px;
 }
+
 label {
   padding-bottom: 14px;
-  font-size: 20px;
+  font-size: 15px;
+  text-align: right;
 }
 
 h2 {
@@ -26,7 +28,7 @@ h2 {
 .well {
   display: none;
   text-align: center;
-  margin: 5px auto;
+  margin: 10px auto;
   width: 50%;
   padding: 20px;
 

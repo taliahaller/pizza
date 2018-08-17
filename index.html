@@ -21,10 +21,21 @@
       </div>
       <div class="centerQuestion">
         <form id="formOne">
-          <div class="form-group">
-            <label for="inputNumber">Your Number:</label>
-            <input id="inputNumber" type="number" min="0" max="1000" class="form-control">
+          <div class="form-group row">
+            <label for="inputNumber" class="col-sm-5 col-form-label">Name:</label>
+            <div class="col-sm-7">
+              <input id="inputName" type="text" class="form-control">
+            </div>
           </div>
+
+          <div class="form-group row">
+            <label for="inputNumber" class="col-sm-5 col-form-label">Your Number:</label>
+            <div class="col-sm-7">
+              <input id="inputNumber" type="number" min="0" max="1000" class="form-control">
+            </div>
+          </div>
+
+
           <button type="submit" class="btn btn-warning" id="submitButton">Convert Your Number:</button>
         </form>
       </div>
@@ -32,7 +43,7 @@
         <!-- <div class="col-md-6 col-lg-offset-3"> -->
           <div class="well">
             <div id="result">
-              <p #tellCode>Your Beep Boop code is:</p>
+              <p #tellCode><span id="nameForMessage"></span>, your Beep Boop code is:</p>
               <h2><span id="answer"></span></h2>
             <!-- </div> -->
           </div>
