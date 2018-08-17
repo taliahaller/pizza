@@ -15,22 +15,16 @@ loop3:
   for(var i = 1; i < userNumber + 2; i++){
     var examineNumber = numbers[i];
 
-    if (/1+/.test(examineNumber)) {
-        beepBoop.push("Boop");
-      }  else if (/0+/.test(examineNumber)) {
-        beepBoop.push("Beep");
+    if (examineNumber % 3 == 0) {
+          beepBoop.push("Dave");
+      } else if (/1+/.test(examineNumber)) {
+          beepBoop.push("Boop");
+      } else if (/0+/.test(examineNumber)) {
+          beepBoop.push("Beep");
       } else {
-        beepBoop.push(examineNumber);
+          beepBoop.push(examineNumber);
       }
-
-
-  } //for loop 3
-
-  console.log(examineNumber);
-  console.log(beepBoop);
-
-
-
+    } //for loop 3
 
     beepBoop = beepBoop.join(", ");
     $(".answer").text(beepBoop);
