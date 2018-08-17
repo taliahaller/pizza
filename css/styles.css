@@ -1,15 +1,49 @@
-.container {
-  background-image: linear-gradient(lightblue, white);
+/* Parallax Styling */
+body {
+  margin: 0;
+  padding: 0;
 }
 
+.background1 {
+  background-image: url(./../img/1.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
+.background2 {
+  background-image: url(./../img/6.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
+.background3 {
+  background-image: url(./../img/7.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Main Element Styling */
 .jumbotron {
   padding: 5px 3px 5px 3px;
-  margin: 4% 2%;
+  margin: 40% 15%;
+  border-radius: 5px;
 }
 
 .centerQuestion {
   text-align: center;
-  margin: 55px auto;
+  margin: 50% auto;
   width: 400px;
   padding: 10px;
 }
@@ -17,23 +51,37 @@
 label {
   padding-bottom: 14px;
   font-size: 15px;
+  color: white;
   text-align: right;
 }
 
-h2 {
+h1 {
   font-family: 'Baloo Bhai', cursive;
+  text-align: center;
+}
+
+h2, h5 {
   text-align: center;
 }
 
 .well {
   display: none;
   text-align: center;
-  margin: 10px auto;
+  margin: 60% auto;
   width: 50%;
   padding: 20px;
-
 }
 
+.magicText {
+  color: white;
+  width: 500px;
+  padding-left: 8%;
+  padding-top: 18%;
+}
+
+#magic {
+  font-size: 25px;
+}
 
 p {
   font-size: 20px;

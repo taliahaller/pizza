@@ -1,9 +1,9 @@
 $(document).ready(function() {
   $("#formOne").submit(function() {
+    $(".magicText").hide();
     $(".well").show();
   event.preventDefault();
 
-  // var userName = $("input#inputName").val();
   var userNumber = parseInt($("input#inputNumber").val());
   var numbers = ["0",...Array(1000).keys()];
   var beepBoop = [];
