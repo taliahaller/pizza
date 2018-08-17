@@ -34,10 +34,13 @@
           <div class="form-group row">
             <label for="inputNumber" class="col-sm-5 col-form-label">Your Number:</label>
             <div class="col-sm-7">
-              <input id="inputNumber" type="number" min="0" max="1000" class="form-control">
+              <input id="inputNumber" type="number" min="0" max="1000" class="form-control" required placeholder="Number is required.">
             </div>
           </div>
-          <button type="submit" class="btn btn-warning" id="submitButton">Convert Your Number:</button>
+          <div id="buttonCenter">
+            <button type="submit" class="btn btn-warning" id="submitButton">Convert Your Number:</button>
+            <button type="button" class="btn btn-info" id="reverseButton">Reverse Your Number:</button>
+          </div>
         </form>
       </div>
     </div>

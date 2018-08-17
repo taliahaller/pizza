@@ -55,6 +55,14 @@ label {
   text-align: right;
 }
 
+input:hover {
+  border: 2px dashed purple;
+}
+
+#buttonCenter {
+  float: right;
+}
+
 h1 {
   font-family: 'Baloo Bhai', cursive;
   text-align: center;
