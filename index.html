@@ -16,7 +16,6 @@
   <body>
     <div class="container">
       <h1>Address Book</h1>
-
       <div class="row">
         <div class="col-md-6">
           <h2>Add a contact:</h2>
@@ -29,6 +28,23 @@
               <label for="new-last-name">Last name</label>
               <input type="text" class="form-control" id="new-last-name">
             </div>
+            <div id="new-addresses">
+              <div class="new-address">
+                <div class="form-group">
+                  <label for="street">Street</label>
+                  <input type="text" class="form-control street">
+                </div>
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <input type="text" class="form-control city">
+                </div>
+                <div class="form-group">
+                  <label for="state">State</label>
+                  <input type="text" class="form-control state">
+                </div>
+              </div>
+            </div>
+            <span class="btn btn-primary" id="add-address">Another Address</span>
             <button type="submit" class="btn btn-warning">Add</button>
           </form>
           <h2>Contacts</h2>
@@ -38,11 +54,14 @@
         <div class="col-md-6">
           <div id="show-contact">
             <h2></h2>
-
             <p>First name: <span class="first-name"></span></p>
             <p>Last name: <span class="last-name"></span></p>
+            <ul id="addresses">
+
+            </ul>
         </div>
       </div>
     </div>
+  </div>
   </body>
 </html>
