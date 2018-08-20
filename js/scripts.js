@@ -1,51 +1,39 @@
+// Business Logic
+
+function Contact (first, last) {
+  this.firstName = first;
+  this.lastName = last;
+}
+
+Contact.prototype.fullName = function() {
+  return this.firstName + ' ' + this.lastName;
+}
+
+
+// User Interface Logic
 $(document).ready(function() {
 
-  $("#formOne").submit(function() {
-      $(".magicText").hide();
-      $(".well").show();
+  $("form#new-contact").submit(function(event){
     event.preventDefault();
-    var userNumber = parseInt($("input#inputNumber").val());
-    var numbers = ["0",...Array(1000).keys()];
-    var beepBoop = [];
-    for(var i = 1; i < userNumber + 2; i++){
-      var examineNumber = numbers[i];
-      if (examineNumber % 3 == 0) {
-          beepBoop.push("I'm sorry, Dave. I'm afraid I can't do that.");
-      } else if (/1+/.test(examineNumber)) {
-          beepBoop.push("Boop");
-      } else if (/0+/.test(examineNumber)) {
-          beepBoop.push("Beep");
-      } else {
-          beepBoop.push(examineNumber);
-      }
-    };
-    beepBoop = beepBoop.join(", ");
-    $("#nameForMessage").text($("input#inputName").val());
-    $("#answer").text(beepBoop + ".");
-  }); // (#formOne).submit close
 
-  $("#reverseButton").click(function() {
-      $(".magicText").hide();
-      $(".well").show();
-    event.preventDefault();
-    var userNumber = parseInt($("input#inputNumber").val());
-    var numbers = ["0",...Array(1000).keys()];
-    var beepBoop = [];
-    for(var i = 1; i < userNumber + 2; i++){
-      var examineNumber = numbers[i];
-      if (examineNumber % 3 == 0) {
-            beepBoop.push("I'm sorry, Dave. I'm afraid I can't do that.");
-      } else if (/1+/.test(examineNumber)) {
-          beepBoop.push("Boop");
-      } else if (/0+/.test(examineNumber)) {
-          beepBoop.push("Beep");
-      } else {
-          beepBoop.push(examineNumber);
-      }
-    };
-      var beepBoopReversed = beepBoop.reverse();
-      beepBoopReversed = beepBoopReversed.join(", ");
-    $("#nameForMessage").text($("input#inputName").val());
-    $("#answer").text(beepBoopReversed + ".");
-  }); // (#formOne).submit close
+    var inputtedFirstName = $("input#new-first-name").val();
+    var inputtedLastName = $("input#new-last-name").val();
+
+    var newContact = new Contact(inputtedFirstName, inputtedLastName);
+
+    $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
+
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+
+    $(".contact").last().click(function(){
+      $("#show-contact").show();
+      $("#show-contact h2").text(newContact.firstName);
+      $(".first-name").text(newContact.firstName);
+      $(".last-name").text(newContact.lastName);
+    });
+
+
+
+  }); // form.submit close
 }); // (document).ready close
