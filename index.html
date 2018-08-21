@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-    <title>Address Book</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Address Book</h1>
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Add a contact:</h2>
-          <form id="new-contact">
-            <div class="form-group">
-              <label for="new-first-name">First name</label>
-              <input type="text" class="form-control" id="new-first-name">
-            </div>
-            <div class="form-group">
-              <label for="new-last-name">Last name</label>
-              <input type="text" class="form-control" id="new-last-name">
-            </div>
-            <div class="new-addresses">
-              <div class="new-address">
-                <div class="form-group">
-                  <label for="street">Street</label>
-                  <input type="text" class="form-control street">
-                </div>
-                <div class="form-group">
-                  <label for="city">City</label>
-                  <input type="text" class="form-control city">
-                </div>
-                <div class="form-group">
-                  <label for="state">State</label>
-                  <input type="text" class="form-control state">
-                </div>
-              </div>
-            </div>
-            <span class="btn btn-primary" id="add-address">Another Address</span>
-            <button type="submit" class="btn btn-warning">Add</button>
-          </form>
-          <h2>Contacts</h2>
-          <ul id="contacts">
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <div id="show-contact">
-            <h2></h2>
-            <p>First name: <span class="first-name"></span></p>
-            <p>Last name: <span class="last-name"></span></p>
-            <ul id="addresses">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <title>Movie Tickets</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
 
-            </ul>
-        </div>
-      </div>
+        <h1>Movie Tickets</h1>
+
+        <form id="userInput">
+          <div class="form-group" input id="movieInput">
+            <h2>Select your movie</h2>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="movie1" value="new" checked>
+              <label class="form-check-label" for="movie1">
+                Crazy Rich Asians
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="movie2" value="old">
+              <label class="form-check-label" for="movie2">
+                Incredibles
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="movie3" value="old">
+              <label class="form-check-label" for="movie3">
+                2001 Space Odyssey
+              </label>
+            </div>
+          </div>
+          <div class="form-group" input id="timeInput">
+            <h2>Time</h2>
+            <select class="form-control form-control-lg">
+              <option class='option1'>Matinee</option>
+              <option class='option2'>Regular</option>
+            </select>
+          </div>
+          <div class="form-group" input id="ageInput">
+            <h2>Age group</h2>
+              <div class="slidecontainer">
+                <!-- <label for="ageRange">How old are you?</label> -->
+                <input type="range" min="1" max="110" value="50" class="slider" id="ageRange">
+                <p>Age: <span id="ageValue"></span></p>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-warning">See how much your movie costs!</button>
+
+        </form>
+
+
     </div>
   </div>
+    </div>
   </body>
 </html>
