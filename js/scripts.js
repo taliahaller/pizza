@@ -1,7 +1,4 @@
 // Business Logic
-
-// Slider input
-
 function Movie(name,date) {
   this.movieName = name;
   this.movieDate = date;
@@ -21,18 +18,11 @@ $(document).ready(function() {
   $("#userInput").submit(function(event) {
     event.preventDefault();
 
-
-      var movies = document.getElementsByName("exampleRadios");
       var moviePrice = [];
-
-      for (var i = 0, length = movies.length; i < length; i++)
-        { if (movies[i].checked)
-          {  var customerMovie = movies[i].value;
-          break;
-          }
-        }
+      var inputtedMovie = $('input[name=exampleRadios]:checked').val();
+        // console.log(inputtedMovie);
         var n = new Date().getFullYear();
-        if (movieArray[customerMovie].movieDate <  n ) {
+        if (movieArray[inputtedMovie].movieDate <  n ) {
           var priceOld = 1;
           moviePrice.push(priceOld);
         } else {
@@ -40,38 +30,36 @@ $(document).ready(function() {
           moviePrice.push(priceNew);
         };
 
-        // // console.log(moviePrice);
-        //
-        // var inputtedTime = $("option:selected").val();
-        // console.log(inputtedTime);
-        //
-        // var inputtedMovie = $('input[name=exampleRadios]:checked').val();
-        // console.log(inputtedMovie);
+        // console.log(moviePrice);
+        var inputtedTime = $("option:selected").val();
+        if (inputtedTime === "matinee") {
+          var priceMatinee = 3;
+          moviePrice.push(priceMatinee);
+        } else {
+          var priceRegular = 6;
+          moviePrice.push(priceRegular);
+        };
+        // console.log(moviePrice);
+        var inputtedAge = $("#ageRange").val();
+        // console.log(inputtedAge);
+        if (inputtedAge < 10 || inputtedAge > 65) {
+          var priceSenior = 1;
+          moviePrice.push(priceSenior);
+        } else {
+          var priceNormal = 4;
+          moviePrice.push(priceNormal);
+        };
 
+        console.log(moviePrice);
 
+        // var movieFullPrice = moviePrice;
+        const movieFullPrice = moviePrice =+ moviePrice.reduce((a,b) => a + b, 0);
+  console.log(movieFullPrice);
 
-
-
-
-
-        // customerMovieDate =
-
-        // if (customerMovieDate < this.year) {
-        //
-        // }
-
-
-
-
-      // var inputtedTime = $("input#timeInput").val();
-      // var inputtedAge = $("input#AgeInput").val();
-
-
-    // if (inputtedMovie == "old")
-
+        $("button.display").show();
+        $("span#displayMoviePrice").text("$" + movieFullPrice);
 
   }); //form close
-
 
   var slider = document.getElementById("ageRange");
   var output = document.getElementById("ageValue");
