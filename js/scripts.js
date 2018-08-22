@@ -1,36 +1,67 @@
 // Business Logic
-function currentRoll(){
+function Roll(){
   return Math.floor((Math.random() * 6) + 1);
-
 }
 
-
-function Player (name, roll, currentScore, totalScore) {
+function Player(name, rollValue, currentScore, totalScore) {
   this.name = name;
-  this.roll = 0;
-  this.currentScore = 0;
-  this.totalScore = 0;
+  this.rollValue = rollValue;
+  this.currentScore = currentScore;
+  this.totalScore = totalScore;
+}
+
+Player.prototype.updateRollValue = function(newRollValue) {
+  console.log(this);
+  if (newRollValue === 1) {
+    var total = 0;
+    return total;
+  } else if (newRollValue > 1) {
+    var total = newRollValue += this.currentScore;
+    console.log(total);
+
+    return total;
+  }
+}
+
+Player.prototype.hold = function() {
+  console.log(this.totalScore);
+  this.totalScore += this.currentScore;
 }
 
 // User Interface Logic
+
+
 $(document).ready(function() {
+
+  var playerOne = new Player(1, 0, 0, 0);
+  var playerTwo = new Player(2, 0, 0, 0);
+
     //Start Game
-  $("#playButton").click(function() {
+    $("#playButton").click(function() {
       $("#startScreen").hide();
       $("#player1Screen").show();
     }); //end Start Game button
 
-
   $("#rollButton1").click(function() {
-    this.roll = currentRoll();
-    var playerOne = new Player("1", this.roll)
-console.log(this.role);
-console.log(currentRoll());
-console.log(playerOne);
+    var newRollValue = Roll();
+    var currentScore = playerOne.updateRollValue(newRollValue);
+    console.log(currentScore);
+    playerOne = new Player(1, newRollValue, currentScore, 0);
+    console.log("playerOne.rollValue = " + playerOne.rollValue);
+    // console.log(playerOne);
 
-    $("#rollScore").text();
-    $("#player1CurrentScore").text();
+    $("#rollScore").text(newRollValue);
+    $("#player1CurrentScore").text(playerOne.currentScore);
 
 
   }); // roll Button close
+
+  $("#holdButton1").click(function() {
+    console.log('hold clicked');
+    playerOne.hold();
+    $("#player1TotalScore").text(playerOne.totalScore);
+    playerOne = new Player(1, 0, 0, totalScore);
+    playerOne.currentScore = 0;
+    $("#player1CurrentScore").text(playerOne.currentScore);
+  })
 }); // (document).ready close
