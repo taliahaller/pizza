@@ -29,14 +29,7 @@ Player.prototype.hold = function() {
   }
 }
 
-// Player.prototype.resetPage = function() {
-//   this.currentScore = 0;
-//   this.totalScore = 0;
-// }
-
 // User Interface Logic
-
-
 $(document).ready(function() {
 
   var playerOne = new Player(1, 0, 0, 0);

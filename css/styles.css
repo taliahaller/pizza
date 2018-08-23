@@ -1,3 +1,21 @@
 #player1Screen, #player2Screen, #oopsScreen1, #oopsScreen2, #winnerScreen, #switchPlayer1, #switchPlayer2, #scoreboard {
   display: none;
 }
+
+.btn {
+  margin-bottom: 30px;
+}
+
+#rowCenter {
+  margin-left: 9.5%;
+}
+
+.well {
+  margin: 10px;
+  text-align: center;
+
+}
+
+h1, #startScreen, #player1Screen, #player2Screen, #player1TotalScore, #player2TotalScore {
+  text-align: center;
+}
