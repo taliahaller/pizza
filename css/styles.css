@@ -1,4 +1,4 @@
-#player1Screen, #player2Screen, #oopsScreen1, #oopsScreen2, #winnerScreen, #switchPlayer1, #switchPlayer2, #scoreboard {
+#player1Screen, #player2Screen, #oopsScreen1, #oopsScreen2, #winnerScreen, #switchPlayer1, #switchPlayer2, #scoreboard, #homeScreen {
   display: none;
 }
 
@@ -16,6 +16,18 @@
 
 }
 
-h1, #startScreen, #player1Screen, #player2Screen, #player1TotalScore, #player2TotalScore {
+h1, #startScreen, #player1Screen, #player2Screen, #player1TotalScore, #player2TotalScore, #homeScreen {
   text-align: center;
+}
+
+#player1Screen {
+  color: #1755b7;
+}
+
+#player2Screen {
+  color: #c91821;
+}
+
+#homeScreen {
+margin-top: 50%;
 }
