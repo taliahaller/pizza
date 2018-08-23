@@ -16,7 +16,7 @@
 
 }
 
-h1, #startScreen, #player1Screen, #player2Screen, #player1TotalScore, #player2TotalScore, #homeScreen {
+h1, #startScreen, #player1Screen, #player2Screen, #player1TotalScore, #player2TotalScore, #homeScreen, #winnerScreen {
   text-align: center;
 }
 
