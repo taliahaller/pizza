@@ -11,7 +11,6 @@ function Player(name, rollValue, currentScore, totalScore) {
 }
 
 Player.prototype.updateRollValue = function(newRollValue) {
-  console.log(this);
   if (newRollValue === 1) {
     var total = 0;
     return total;
@@ -25,7 +24,9 @@ Player.prototype.updateRollValue = function(newRollValue) {
 
 Player.prototype.hold = function() {
   console.log(this.totalScore);
-  this.totalScore += this.currentScore;
+  console.log(this);
+  var totalScore = this.totalScore += this.currentScore;
+  return totalScore;
 }
 
 // User Interface Logic
@@ -46,7 +47,7 @@ $(document).ready(function() {
     var newRollValue = Roll();
     var currentScore = playerOne.updateRollValue(newRollValue);
     console.log(currentScore);
-    playerOne = new Player(1, newRollValue, currentScore, 0);
+    playerOne = new Player(1, newRollValue, currentScore, playerOne.totalScore);
     console.log("playerOne.rollValue = " + playerOne.rollValue);
     // console.log(playerOne);
 
@@ -58,10 +59,12 @@ $(document).ready(function() {
 
   $("#holdButton1").click(function() {
     console.log('hold clicked');
-    playerOne.hold();
+    var totalScore = playerOne.hold();
     $("#player1TotalScore").text(playerOne.totalScore);
+    console.log(playerOne.totalScore);
     playerOne = new Player(1, 0, 0, totalScore);
-    playerOne.currentScore = 0;
+    console.log(playerOne);
+    // playerOne.currentScore = 0;
     $("#player1CurrentScore").text(playerOne.currentScore);
   })
 }); // (document).ready close
