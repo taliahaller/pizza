@@ -22,8 +22,17 @@ Player.prototype.updateRollValue = function(newRollValue) {
 
 Player.prototype.hold = function() {
   var totalScore = this.totalScore += this.currentScore;
-  return totalScore;
+  if (totalScore > 20) {
+    return true;
+  } else {
+    return totalScore;
+  }
 }
+
+// Player.prototype.resetPage = function() {
+//   this.currentScore = 0;
+//   this.totalScore = 0;
+// }
 
 // User Interface Logic
 
@@ -57,12 +66,19 @@ $(document).ready(function() {
 
   $("#holdButton1").click(function() {
     var totalScore = playerOne.hold();
+
+    if (totalScore === true) {
+      $("#winnerScreen").show();
+      $("#player1Screen").hide();
+      }
+
     $(".player1TotalScore").text(playerOne.totalScore);
     playerOne = new Player(1, 0, 0, totalScore);
     $("#player1CurrentScore").text(playerOne.currentScore);
     $("#switchPlayer1").show();
     $("#rollButton1").hide();
     $("#holdButton1").hide();
+
   });
 
   $("#switchPlayer1").click(function() {
@@ -90,6 +106,12 @@ $(document).ready(function() {
 
   $("#holdButton2").click(function() {
     var totalScore = playerTwo.hold();
+
+    if (totalScore === true) {
+      $("#winnerScreen").show();
+      $("#player2Screen").hide();
+      }
+
     $(".player2TotalScore").text(playerTwo.totalScore);
     playerTwo = new Player(2, 0, 0, totalScore);
     $("#player2CurrentScore").text(playerTwo.currentScore);
@@ -104,6 +126,17 @@ $(document).ready(function() {
     $("#rollButton1").show();
     $("#holdButton1").show();
     $("#switchPlayer1").hide();
+  });
+
+  $("#playAgainButton").click(function() {
+    $("#player1Screen").show();
+    $("#winnerScreen").hide();
+    playerOne = new Player(1, 0, 0, 0);
+    playerTwo = new Player(2, 0, 0, 0);
+    $("#player1CurrentScore").text(playerOne.currentScore);
+    $(".player1TotalScore").text(playerOne.totalScore);
+    $("#player2CurrentScore").text(playerTwo.currentScore);
+    $(".player2TotalScore").text(playerTwo.totalScore);
   });
 
 }); // (document).ready close
