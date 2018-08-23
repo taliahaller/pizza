@@ -16,15 +16,11 @@ Player.prototype.updateRollValue = function(newRollValue) {
     return total;
   } else if (newRollValue > 1) {
     var total = newRollValue += this.currentScore;
-    console.log(total);
-
     return total;
   }
 }
 
 Player.prototype.hold = function() {
-  console.log(this.totalScore);
-  console.log(this);
   var totalScore = this.totalScore += this.currentScore;
   return totalScore;
 }
@@ -41,30 +37,73 @@ $(document).ready(function() {
     $("#playButton").click(function() {
       $("#startScreen").hide();
       $("#player1Screen").show();
+      $("#scoreboard").show();
     }); //end Start Game button
 
   $("#rollButton1").click(function() {
     var newRollValue = Roll();
     var currentScore = playerOne.updateRollValue(newRollValue);
-    console.log(currentScore);
     playerOne = new Player(1, newRollValue, currentScore, playerOne.totalScore);
-    console.log("playerOne.rollValue = " + playerOne.rollValue);
-    // console.log(playerOne);
-
-    $("#rollScore").text(newRollValue);
+      $("#rollScore1").text(newRollValue);
     $("#player1CurrentScore").text(playerOne.currentScore);
 
-
+    if (newRollValue === 1) {
+      $("#switchPlayer1").show();
+      $("#rollButton1").hide();
+      $("#holdButton1").hide();
+      $(".player1TotalScore").text(playerOne.totalScore);
+    };
   }); // roll Button close
 
   $("#holdButton1").click(function() {
-    console.log('hold clicked');
     var totalScore = playerOne.hold();
-    $("#player1TotalScore").text(playerOne.totalScore);
-    console.log(playerOne.totalScore);
+    $(".player1TotalScore").text(playerOne.totalScore);
     playerOne = new Player(1, 0, 0, totalScore);
-    console.log(playerOne);
-    // playerOne.currentScore = 0;
     $("#player1CurrentScore").text(playerOne.currentScore);
-  })
+    $("#switchPlayer1").show();
+    $("#rollButton1").hide();
+    $("#holdButton1").hide();
+  });
+
+  $("#switchPlayer1").click(function() {
+    $("#player1Screen").hide();
+    $("#player2Screen").show();
+    $("#rollButton2").show();
+    $("#holdButton2").show();
+    $("#switchPlayer2").hide();
+  });
+
+  $("#rollButton2").click(function() {
+    var newRollValue2 = Roll();
+    var currentScore = playerTwo.updateRollValue(newRollValue2);
+    playerTwo = new Player(2, newRollValue2, currentScore, playerTwo.totalScore);
+      $("#rollScore2").text(newRollValue2);
+    $("#player2CurrentScore").text(playerTwo.currentScore);
+
+    if (newRollValue2 === 1) {
+      $("#switchPlayer2").show();
+      $("#rollButton2").hide();
+      $("#holdButton2").hide();
+      $(".player2TotalScore").text(playerTwo.totalScore);
+    };
+  }); // roll Button close
+
+  $("#holdButton2").click(function() {
+    var totalScore = playerTwo.hold();
+    $(".player2TotalScore").text(playerTwo.totalScore);
+    playerTwo = new Player(2, 0, 0, totalScore);
+    $("#player2CurrentScore").text(playerTwo.currentScore);
+    $("#switchPlayer2").show();
+    $("#rollButton2").hide();
+    $("#holdButton2").hide();
+  });
+
+  $("#switchPlayer2").click(function() {
+    $("#player2Screen").hide();
+    $("#player1Screen").show();
+    $("#rollButton1").show();
+    $("#holdButton1").show();
+    $("#switchPlayer1").hide();
+  });
+
 }); // (document).ready close

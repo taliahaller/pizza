@@ -21,32 +21,39 @@
       </div>
       <div id="player1Screen">
         <h3>Player 1</h3>
-        <p>Total Score: <span id="player1TotalScore"></span></p>
-        <p>Roll: <span id="rollScore"></span></p>
+        <p>Total Score: <span class="player1TotalScore"></span></p>
+        <p>Roll: <span id="rollScore1"></span></p>
         <p>Current Score: <span id="player1CurrentScore"></span></p>
         <button type="button" name="button" class="btn btn-info" id="rollButton1">Roll</button>
         <button type="button" name="button" class="btn btn-warning" id="holdButton1">Hold</button>
-      </div>
-      <div id="oopsScreen1">
-        <h2>Oops! You rolled a 1</h2>
-        <button type="button" name="button" class="btn btn-danger" id="switchButton1">Switch to Player 2</button>
+        <button type="button" name="button" class="btn btn-success" id="switchPlayer1">Switch Player</button>
       </div>
       <div id="player2Screen">
         <h3>Player 2</h3>
-        <p>Total Score: <span id="player2TotalScore"></span></p>
-        <button type="button" name="button" class="btn btn-info" id="rollButton2">Roll</button>
+        <p>Total Score: <span class="player2TotalScore"></span></p>
+        <p>Roll: <span id="rollScore2"></span></p>
         <p>Current Score: <span id="player2CurrentScore"></span></p>
+        <button type="button" name="button" class="btn btn-info" id="rollButton2">Roll</button>
         <button type="button" name="button" class="btn btn-warning" id="holdButton2">Hold</button>
-        <button type="button" name="button" class="btn btn-success" id="rollAgainButton2">Roll Again</button>
-      </div>
-      <div id="oopsScreen2">
-        <h2>Oops! You rolled a 1</h2>
-        <button type="button" name="button" class="btn btn-danger" id="switchButton2">Switch to Player 1</button>
+        <button type="button" name="button" class="btn btn-success" id="switchPlayer2">Switch Player</button>
       </div>
       <div id="winnerScreen">
         <h3>Winner!</h3>
         <p><span id="winner"></span></p>
         <button type="button" name="button" class="btn btn-success" id="playAgainButton">Play Again</button>
+      </div>
+      <div id="scoreboard">
+        <div class="row">
+          <div class="col-sm-6 well">
+            <h3>Player 1 Total Score</h3>
+            <p>Your total score is: <span class="player1TotalScore"></span></p>
+          </div>
+          <div class="col-sm-6 well">
+            <h3>Player 2 Total Score</h3>
+            <p>Your total score is: <span class="player2TotalScore"></span></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
