@@ -1,19 +1,15 @@
-# Beep Boop Number Translator
+# Sizzle Pie Pizza Order Page
 
-#### Webpage form to convert users numerical input into specific pattern detailed below, 17 Aug 2018.
+#### Webpage form to that allows users to calculate their pizza order cost based on the number of toppings and size desired, 24 Aug 2018.
 #### By Talia Haller
 
 ## Description
 
-Creates a web application that takes a number from a user (range = 0 to 1000) and returns a range of numbers from 0 to the chosen number with the following exceptions:
+A website for a pizza company where a user can choose one or more individual toppings (cheese, pepperoni, artichoke, anchovy, etc) and a size to order a pizza and see the final cost.
 
-Numbers that contain a 0 are replaced (all digits) with "Beep!"
-Numbers that contain a 1 are replaced (all digits) with "Boop!"
-Numbers divisible by 3 are replaced with "I'm sorry, Dave. I'm afraid I can't do that."
-
-These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third. For example, the number 10 is replaced with "Boop!", and the number 30 is with "I'm sorry, Dave. I'm afraid I can't do that."
-
-Also a user can enter a new number and see new results over and over again.
+Allows the user to choose toppings and size for the pizza they'd like to order.
+Creates a pizza object constructor with properties for toppings and size.
+Creates a prototype method for the cost of a pizza depending on the selections chosen. Uses original formula for this.
 
 ## Specs for project:
 
