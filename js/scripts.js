@@ -8,10 +8,18 @@
 // User Interface Logic
 $(document).ready(function() {
 
+
+  // Open Cost Order Form
   $("#getCostFormButton").click(function() {
     $("#getCostFormButton").hide();
-    $(".well").show();
+    $("#orderInput").show();
   });
+
+  // Return Cost Section
+  $("#findCostButton").click(function() {
+    $("#pizzaOrderCost").show();
+  });
+
 
 
 }); // (document).ready close
