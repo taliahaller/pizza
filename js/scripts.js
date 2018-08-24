@@ -1,68 +1,43 @@
 // Business Logic
 
-function Customer(name, numberOfToppings, pizzaSize) {
+function Customer(name, numberToppings, pizzaSize, costOfPizza) {
   this.name = name;
-  this.numberOfToppings = numberOfToppings;
+  this.numberOfToppings = numberToppings;
   this.pizzaSize = pizzaSize;
+  this.costOfPizza = costOfPizza;
 }
 
-function MyFunction (pizzaSizeCost) {
-  if (pizzaSizeCost === "small") {
-    return 7
-  }
-  if (pizzaSizeCost === "medium") {
-    return 10
-  }
-  if (pizzaSizeCost === "large") {
-    return 13
-  }
-  if (pizzaSizeCost === "extra large") {
-    return 15
-  }
+Customer.prototype.sizeCost = function(pizzaSizeCost) {
+  if (pizzaSizeCost === "small") {return 7}
+  if (pizzaSizeCost === "medium") {return 10}
+  if (pizzaSizeCost === "large") {return 13}
+  if (pizzaSizeCost === "extra large") {return 15}
 }
-
-function MyFunction2 (toppingCost) {
-  if (toppingCost === 1) {
-    return 1
-  }
-  if (toppingCost === 2) {
-    return 2
-  }
-  if (toppingCost === 3) {
-    return 3
-  }
+Customer.prototype.toppingCost = function(toppingCost) {
+  if (toppingCost === 1) {return 1}
+  if (toppingCost === 2) {return 2}
+  if (toppingCost === 3) {return 3}
 }
 
 // User Interface Logic
 $(document).ready(function() {
-
-  // Open Cost Order Form
+    // Open Cost Order Form
   $("#getCostFormButton").click(function() {
     event.preventDefault();
     $("#getCostFormButton").hide();
     $("#orderInput").show();
   });
-
   // Submit Form
   $("form#pizzaOrderForm").submit(function() {
     event.preventDefault();
     $("#pizzaOrderCost").show();
-
-  // Return Info in Return Section
-  var customerNameInput = $("input#customer").val();
-  var numberOfToppingsInput = $("input:checked").length;
-  var pizzaSizeInput = $("option:selected").val();
-
-  var costOfSize = MyFunction(pizzaSizeInput);
-  var costOfToppings = MyFunction2(numberOfToppingsInput);
-  console.log(costOfSize);
-  console.log(costOfToppings);
-  var costOfPizza = costOfSize += costOfToppings;
-  console.log(costOfPizza);
-
-  $("#customerOutput").text(customerNameInput + ", your " + pizzaSizeInput + " pizza with " + numberOfToppingsInput + " topping(s) will cost $" + costOfPizza + ".")
-
-
+    var newCustomer = new Customer()
+    var customerNameInput = $("input#customer").val();
+    var numberToppingsInput = $("input:checked").length;
+    var pizzaSizeInput = $("option:selected").val();
+    var costOfPizza = newCustomer.sizeCost(pizzaSizeInput) + newCustomer.toppingCost(numberToppingsInput);
+    var newCustomer = new Customer(customerNameInput, numberToppingsInput, pizzaSizeInput, costOfPizza)
+    $("#customerOutput").text(newCustomer.name + ", your " + newCustomer.pizzaSize + " pizza with " + newCustomer.numberOfToppings + " topping(s) will cost $" + newCustomer.costOfPizza + ".");
 
   }); // Form Close
 }); // (document).ready close
