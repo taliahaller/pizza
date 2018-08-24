@@ -27,6 +27,14 @@ $(document).ready(function() {
     $("#getCostFormButton").hide();
     $("#orderInput").show();
   });
+
+    // Open Cost Order Form from Order Button
+  $("#orderNowButtonFrontPage").click(function() {
+    event.preventDefault();
+    $("#getCostFormButton").hide();
+    $("#orderInput").show();
+  });
+
   // Submit Form
   $("form#pizzaOrderForm").submit(function() {
     event.preventDefault();

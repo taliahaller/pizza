@@ -52,11 +52,38 @@
   margin-left: 10%;
 }
 
+@media screen and (max-width:1160px) {
+  .header a {
+    float: none;
+    margin-left: 5px;
+    padding: 0px;
+  }
+}
+
+/* Background Image Styling */
+
+div.orderSection {
+  background: url("../img/pizza.jpg");
+  background-color: white;
+  height: 1000px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  text-align: center;
+  /* opacity: 0.5; */
+}
+
+#getCostFormButton {
+  margin: 25% 40%;
+  font-variant: small-caps;
+  font-size: 60px;
+}
+
 /* Container Styling */
 
-.container {
+/* .container {
   text-align: center;
-}
+} */
 
 #pizzaOrderDetails {
   text-align: left;
@@ -122,4 +149,32 @@ input {
   margin: 20px;
   border: none;
   border-radius: 10px;
+}
+
+footer {
+  width: 100%;
+  background-color: black;
+  padding: 2%;
+  color: white;
+}
+
+h3#visit {
+  padding-bottom: 15px;
+}
+
+#orderNowButtonFrontPage {
+  margin-top: 30px;
+  border: none;
+  border-radius: 15px;
+}
+
+.fa {
+  padding: 15px;
+  font-size: 19px;
+  color: white;
+}
+
+.fa:hover {
+  color: red;
+  text-decoration: none;
 }
