@@ -22,9 +22,10 @@ $(document).ready(function() {
     $("#pizzaOrderCost").show();
 
   // Put Name in Order Form
-  var customerNameOutput = $("input#customer").val();
-  console.log(customerNameOutput);
-  $("#customerNameOutput").text(customerNameOutput);
+  var customerNameInput = $("input#customer").val();
+  var numberOfToppingsInput = $("input:checked").length;
+  var pizzaSizeInput = $("option:selected").val();
+  $("#customerOutput").text(customerNameInput + ", your " + pizzaSizeInput + " pizza with " + numberOfToppingsInput + " topping(s) will cost " + "$20" + ".")
 
 
 

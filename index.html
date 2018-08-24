@@ -43,17 +43,18 @@
             <div class="form-group" id="sizeQuestion">
               <label for="selectSize">Choose Your Size:</label>
               <select class="form-control" id="selectSize">
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
-                <option>Extra Large</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="extra large">Extra Large</option>
               </select>
             </div>
             <button id="findCostFormButton" class="btn btn-warning" type="submit" value="Submit">Find out how much your pizza costs!</button>
           </form>
         </div>
         <div id="pizzaOrderCost" class="col-md-6 well">
-          <h3><span id="customerNameOutput"></span>, your pizza will cost <span id="costOfPizza"></span>!</h3>
+          <h3><span id="customerOutput"></span></h3>
+          <h6>Click below to order your pizza now.</h6>
           <button id="orderNow" class="btn btn-info">Order Your Pizza!</button>
         </div>
       </div>
