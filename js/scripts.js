@@ -39,5 +39,20 @@ $(document).ready(function() {
     var newCustomer = new Customer(customerNameInput, numberToppingsInput, pizzaSizeInput, costOfPizza)
     $("#customerOutput").text(newCustomer.name + ", your " + newCustomer.pizzaSize + " pizza with " + newCustomer.numberOfToppings + " topping(s) will cost $" + newCustomer.costOfPizza + ".");
 
+    $("#orderNowButton").click(function() {
+      $(".row").hide();
+      $("#pizzaOrderDetails").show();
+      $("#deliveryName").text(newCustomer.name);
+
+      $("#toppingsSummary").text(newCustomer.numberOfToppings);
+      $("#sizeSummary").text((newCustomer.pizzaSize).toUpperCase());
+      $("#costSummary").text("$" + newCustomer.costOfPizza);
+    });
+
+      $("form#customerAddress").submit(function() {
+        event.preventDefault();
+        $("#pizzaOrderDetails").hide();
+        $("#congratulationsWell").show();
+    });
   }); // Form Close
 }); // (document).ready close

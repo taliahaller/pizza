@@ -14,48 +14,102 @@
     <title>Sizzle Pie Pizza</title>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron">
-          <h1>Sizzle Pie Pizza</h1>
-      </div>
-      <button id="getCostFormButton" class="btn btn-success" type="button">See how much your pizza order will cost!</button>
-      <div class="row">
-        <div id="orderInput" class="col-md-4 well">
-          <form id="pizzaOrderForm">
-            <div class="form-group" id="customerNameQuestion">
-              <label for="customer" class="col-med-2">Name:</label>
-              <div class="col-med-9">
-                <input id="customer" type="text" class="form-control" >
-              </div>
-            </div>
-            <div class="form-group" id="toppingQuestion">
-              <h5>Choose your toppings:</h5>
-              <div class="checkbox">
-                <label><input type="checkbox" value="Pineapple">Pineapple</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="Pepperoni">Pepperoni</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="Bacon">Bacon</label>
-              </div>
-            </div>
-            <div class="form-group" id="sizeQuestion">
-              <label for="selectSize">Choose Your Size:</label>
-              <select class="form-control" id="selectSize">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-                <option value="extra large">Extra Large</option>
-              </select>
-            </div>
-            <button id="findCostFormButton" class="btn btn-warning" type="submit" value="Submit">Find out how much your pizza costs!</button>
-          </form>
+
+    <!-- Front Content -->
+
+      <div class="header">
+        <a href="index.html"><img src="img/logo.gif" class="logo"></a>
+        <div class="header-left">
+          <a class="active menu" href="#">Menu</a>
+          <a class="menu" href="#">About Us</a>
         </div>
-        <div id="pizzaOrderCost" class="col-md-6 well">
-          <h3><span id="customerOutput"></span></h3>
-          <h6>Click below to order your pizza now.</h6>
-          <button id="orderNow" class="btn btn-info">Order Your Pizza!</button>
+        <div class="header-right">
+          <a class="menu" href="#">Delivery</a>
+          <a class="menu" href="#">Order Online</a>
+        </div>
+      </div>
+
+    <div class="container">
+      <button id="getCostFormButton" class="btn btn-success" type="button">See how much your pizza order will cost!</button>
+
+    <!-- Pizza Cost Calculator Content -->
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <div id="orderInput" class="well">
+            <form id="pizzaOrderForm">
+              <div class="form-inline">
+                <div class="form-group" id="customerNameQuestion">
+                  <label for="customer">Name:</label>
+                  <input id="customer" type="text" class="form-control" >
+                </div>
+                <div class="form-group" id="sizeQuestion">
+                  <label for="selectSize">Size:</label>
+                  <select class="form-control" id="selectSize">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="extra large">Extra Large</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" id="toppingQuestion">
+                <h5>Choose your toppings:</h5>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="Pineapple">Pineapple</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="Pepperoni">Pepperoni</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="Bacon">Bacon</label>
+                </div>
+              </div>
+              <button id="findCostFormButton" class="btn btn-warning" type="submit" value="Submit">Find out how much your pizza costs!</button>
+            </form>
+          </div>
+
+    <!-- Calculated Cost Display -->
+          <div id="pizzaOrderCost" class="well">
+            <h3><span id="customerOutput"></span></h3>
+            <h6>Click below to order your pizza now.</h6>
+            <button id="orderNowButton" class="btn btn-info">Order Your Pizza!</button>
+          </div>
+        </div>
+      </div>
+
+    <!-- Pizza Order Details & Address Entry Content -->
+      <div id="pizzaOrderDetails">
+        <h5><span id="deliveryName"></span>, your order information is below:</h5>
+        <div class="panel panel-warning">
+          <div class="panel-heading">Order Summary</div>
+          <div id="orderSummary" class="panel-body">
+            <p><b>Number of Toppings:</b> <span id="toppingsSummary"></span></p>
+            <p><b>Size:</b> <span id="sizeSummary"></span></p>
+            <p><b>Total Cost:</b> <span id="costSummary"></span></p>
+          </div>
+        </div>
+        <h5 id="addressDetailsHeader">Sizzle Pie just needs your address details:</h5>
+        <form id="customerAddress" class="form-horizontal">
+            <div id="streetInputField" class="form-group">
+              <label class="sr-only" for="street">Street:</label>
+              <input type="text" class="form-control" id="customerStreet" placeholder="Enter street"  name="street">
+            </div>
+          <div class="form-inline ">
+            <div class="form-group">
+              <label class="sr-only" for="city">City:</label>
+              <input type="text" class="form-control" id="customerCity" placeholder="Enter city" name="city">
+            </div>
+          <div class="form-group">
+            <label class="sr-only" for="state">State:</label>
+            <input type="text" class="form-control" id="customerState" placeholder="Enter state" name="state">
+          </div>
+        </div>
+          <button id="enterAddress" class="btn btn-warning" type="submit">Get Your Pizza :)</button>
+        </form>
+      </div>
+      <div class="col-lg-6 col-lg-offset-3">
+        <div id="congratulationsWell" class="well">
+          <h3>Congratulations, your pizza is on its way!</h3>
         </div>
       </div>
     </div>

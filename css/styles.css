@@ -1,21 +1,125 @@
+
+/* header */
+
+.header {
+  overflow: hidden;
+  background-color: black;
+  padding: 20px 20px;
+  line-height: 150px;
+  text-align: center;
+}
+
+.header a {
+  padding: 12px;
+  color: white;
+  font-variant: small-caps;
+}
+
+.logo {
+  margin-bottom: 25px;
+}
+
+.header a.menu:hover {
+  margin-top: 25px;
+  background-color: white;
+  color: red;
+  font-variant: small-caps;
+  padding: 3px 12px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+.header a.active {
+  padding-bottom: 2px;
+  border-bottom-width: 2px;
+  border-bottom-style: inset;
+  color: white;
+  padding: 3px 12px;
+  }
+
+.menu {
+  margin: 5px;
+}
+
+.header-right {
+  float:right;
+  margin-right: 10%;
+}
+
+.header-left {
+  float:left;
+  margin-left: 10%;
+}
+
+/* Container Styling */
+
 .container {
   text-align: center;
 }
 
+#pizzaOrderDetails {
+  text-align: left;
+  background-color: #FFE6EF;
+  border-style: solid;
+  border-color: #FFD0EF;
+  border-radius: 10px;
+  padding: 25px;
+}
 
- #orderInput, #pizzaOrderCost {
+.panel {
+  width: 300px;
+  margin: 20px 0px 20px 20px;
+}
+
+#orderInput, #pizzaOrderCost, #pizzaOrderDetails, .well {
   display: none;
 }
 
-#customerNameQuestion {
-margin-bottom: 10px;
-}
-
 #toppingQuestion {
+  overflow: hidden;
+  width: 300px;
+  margin-left: 20%;
+  margin-right: 20%;
   margin-top: 10px;
   padding: 5px 10px 5px 20px;
   border: none;
   border-radius: 10px;
   background-color: white;
   text-align: left;
+}
+
+input {
+  text-align: center;
+}
+
+#customerAddress {
+  width: 400px;
+}
+#customerStreet {
+  width: 300px;
+  margin-left: 15px;
+}
+
+#customerCity, #customerState {
+  width: 150px;
+  margin: 0px 15px 0px 15px;
+}
+
+#addressDetailsHeader {
+  margin-bottom: 20px;
+}
+
+#enterAddress {
+  margin-top: 25px;
+  text-align: center;
+}
+
+#congratulationsWell {
+  background-color: #FFDE76;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
 }
