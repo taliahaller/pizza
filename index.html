@@ -30,56 +30,56 @@
         </div>
       </div>
 
-      <div class="orderSection">
-        <button id="getCostFormButton" class="btn btn-danger" type="button">Get Pizza!</button>
+  <div class="orderSection">
+    <button id="getCostFormButton" class="btn btn-danger" type="button">Get Pizza!</button>
 
     <!-- Pizza Cost Calculator Content -->
-      <div class="row">
-        <div class="col-lg-6 col-lg-offset-3">
-          <div id="orderInput" class="well">
-            <form id="pizzaOrderForm">
-              <div class="form-inline">
-                <div class="form-group" id="customerNameQuestion">
-                  <label for="customer">Name:</label>
-                  <input id="customer" type="text" class="form-control" >
-                </div>
-                <div class="form-group" id="sizeQuestion">
-                  <label for="selectSize">Size:</label>
-                  <select class="form-control" id="selectSize">
-                    <option value="small">Small</option>
-                    <option value="medium">Medium</option>
-                    <option value="large">Large</option>
-                    <option value="extra large">Extra Large</option>
-                  </select>
-                </div>
+    <div id="calculatorContent" class="container row">
+      <div class="col-sm-5 col-sm-offset-3">
+        <div id="orderInput" class="well">
+          <form id="pizzaOrderForm">
+            <div class="form-inline">
+              <div class="form-group" id="customerNameQuestion">
+                <label for="customer">Name:</label>
+                <input id="customer" type="text" class="form-control" >
               </div>
-              <div class="form-group" id="toppingQuestion">
-                <h5>Choose your toppings:</h5>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="Pineapple">Pineapple</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="Pepperoni">Pepperoni</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="Bacon">Bacon</label>
-                </div>
+              <div class="form-group" id="sizeQuestion">
+                <label for="selectSize">Size:</label>
+                <select class="form-control" id="selectSize">
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                  <option value="extra large">Extra Large</option>
+                </select>
               </div>
-              <button id="findCostFormButton" class="btn btn-warning" type="submit" value="Submit">Find out how much your pizza costs!</button>
-            </form>
-          </div>
+            </div>
+            <div class="form-group" id="toppingQuestion">
+              <h5>Choose your toppings:</h5>
+              <div class="checkbox">
+                <label><input type="checkbox" value="Pineapple">Pineapple</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="Pepperoni">Pepperoni</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="Bacon">Bacon</label>
+              </div>
+            </div>
+            <button id="findCostFormButton" class="btn btn-warning" type="submit" value="Submit">Find out how much your pizza costs!</button>
+          </form>
+        </div>
 
     <!-- Calculated Cost Display -->
           <div id="pizzaOrderCost" class="well">
             <h3><span id="customerOutput"></span></h3>
             <h6>Click below to order your pizza now.</h6>
-            <button id="orderNowButton" class="btn btn-info">Order Your Pizza!</button>
+            <button id="orderNowButton" class="btn btn-danger">Order Your Pizza!</button>
           </div>
         </div>
       </div>
 
     <!-- Pizza Order Details & Address Entry Content -->
-      <div id="pizzaOrderDetails">
+      <div class="container" id="pizzaOrderDetails">
         <h5><span id="deliveryName"></span>, your order information is below:</h5>
         <div class="panel panel-warning">
           <div class="panel-heading">Order Summary</div>
@@ -108,10 +108,8 @@
           <button id="enterAddress" class="btn btn-warning" type="submit">Get Your Pizza :)</button>
         </form>
       </div>
-      <div class="col-lg-6 col-lg-offset-3">
-        <div id="congratulationsWell" class="well">
-          <h3>Congratulations, your pizza is on its way!</h3>
-        </div>
+      <div id="congratulationsWell">
+        <h3>Congratulations, your pizza is on its way!</h3>
       </div>
     </div>
 
@@ -134,7 +132,6 @@
           <a href="#" class="fa fa-linkedin"></a>
           <a href="#" class="fa fa-youtube"></a>
         </div>
-      </div>
       </div>
     </footer>
   </body>

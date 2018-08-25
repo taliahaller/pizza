@@ -81,17 +81,24 @@ div.orderSection {
 
 /* Container Styling */
 
-/* .container {
-  text-align: center;
-} */
+.container {
+  /* width: 500px; */
+  margin-top: 150px;
+  margin-left: 10%;
+  margin right: 20%;
+  position: fixed;
+}
 
 #pizzaOrderDetails {
+  position: fixed;
+  width: 380px;
+  margin-left: 35%;
   text-align: left;
-  background-color: #FFE6EF;
-  border-style: solid;
-  border-color: #FFD0EF;
+  background-color: white;
+  border: none;
   border-radius: 10px;
-  padding: 25px;
+  padding-right: 40px;
+  padding: 30px;
 }
 
 .panel {
@@ -99,15 +106,14 @@ div.orderSection {
   margin: 20px 0px 20px 20px;
 }
 
-#orderInput, #pizzaOrderCost, #pizzaOrderDetails, .well {
+#orderInput, #pizzaOrderCost, #pizzaOrderDetails, #congratulationsWell, #orderSection {
   display: none;
 }
 
 #toppingQuestion {
   overflow: hidden;
-  width: 300px;
-  margin-left: 20%;
-  margin-right: 20%;
+  position: sticky;
+  float: center;
   margin-top: 10px;
   padding: 5px 10px 5px 20px;
   border: none;
@@ -143,12 +149,10 @@ input {
 }
 
 #congratulationsWell {
+  position: relative;
   background-color: #FFDE76;
   text-align: center;
-  padding: 20px;
-  margin: 20px;
-  border: none;
-  border-radius: 10px;
+  padding: 10px 20px;
 }
 
 footer {

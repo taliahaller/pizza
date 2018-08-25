@@ -48,7 +48,7 @@ $(document).ready(function() {
     $("#customerOutput").text(newCustomer.name + ", your " + newCustomer.pizzaSize + " pizza with " + newCustomer.numberOfToppings + " topping(s) will cost $" + newCustomer.costOfPizza + ".");
 
     $("#orderNowButton").click(function() {
-      $(".row").hide();
+      $("#calculatorContent").hide();
       $("#pizzaOrderDetails").show();
       $("#deliveryName").text(newCustomer.name);
 
