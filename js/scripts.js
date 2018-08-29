@@ -8,15 +8,17 @@ function Customer(name, numberToppings, pizzaSize, costOfPizza) {
 }
 
 Customer.prototype.sizeCost = function(pizzaSizeCost) {
-  if (pizzaSizeCost === "small") {return 7}
-  if (pizzaSizeCost === "medium") {return 10}
-  if (pizzaSizeCost === "large") {return 13}
-  if (pizzaSizeCost === "extra large") {return 15}
+  if (pizzaSizeCost === "small") {var cost = 7}
+  if (pizzaSizeCost === "medium") {var cost = 10}
+  if (pizzaSizeCost === "large") {var cost = 13}
+  if (pizzaSizeCost === "extra large") {var cost = 15}
+    return cost;
 }
 Customer.prototype.toppingCost = function(toppingCost) {
-  if (toppingCost === 1) {return 1}
-  if (toppingCost === 2) {return 2}
-  if (toppingCost === 3) {return 3}
+  if (toppingCost === 1) {var cost = 1}
+  if (toppingCost === 2) {var cost = 2}
+  if (toppingCost === 3) {var cost = 3}
+    return cost;
 }
 
 // User Interface Logic
@@ -35,7 +37,7 @@ $(document).ready(function() {
     $("#orderInput").show();
   });
 
-  // Submit Form
+    // Submit Form
   $("form#pizzaOrderForm").submit(function() {
     event.preventDefault();
     $("#pizzaOrderCost").show();
